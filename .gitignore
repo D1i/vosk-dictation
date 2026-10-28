@@ -1,0 +1,34 @@
+# Окружение и артефакты сборки. Привязаны к корню (ведущий /): без привязки "dist/" заденет
+# packaging/dist/ — исходники для сборки дистрибутива, они должны попасть в репозиторий.
+/.venv/
+/.tools/
+/models/
+/logs/
+/build/
+/dist/
+
+# Секреты и личные настройки: config.json хранит Discord client secret, discord_token.json — OAuth-токены
+config.json
+discord_token.json
+Discord — настройка.txt
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Резервные копии правок: копия config.json содержит секреты, а tools/build_dist.py упаковал бы app/*.bak в установщик
+*.bak
+
+# Генерируемое
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+Vosk Dictation.lnk
+
+# Локальные рабочие материалы
+/.claude/
+/docs/
+/issue/
+/HANDOFF.md

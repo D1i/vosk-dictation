@@ -1,0 +1,23 @@
+# Нормализация: текстовые файлы хранятся в репозитории с LF
+* text=auto
+
+# Скрипты Windows и сценарии NSIS: CRLF в рабочей копии (cmd.exe и NSIS плохо переносят LF).
+# UTF-8 BOM (нужен для кириллицы в Windows PowerShell 5.1 и NSIS) git сохраняет как есть.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.nsi text eol=crlf
+*.nsh text eol=crlf
+packaging/dist/*.txt text eol=crlf
+
+# Исходники и документы: LF
+*.py text eol=lf
+*.pyw text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+
+# Бинарные файлы
+*.wav binary
+*.ico binary
+*.png binary
+*.lnk binary
